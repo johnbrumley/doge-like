@@ -1,3 +1,6 @@
+# used from :: https://github.com/RameshAditya/asciify
+
+
 from PIL import Image
 
 ASCII_CHARS = ['.',',',':',';','+','*','?','%','S','#',' ']

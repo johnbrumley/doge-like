@@ -2,17 +2,31 @@ let goalChar = "%";
 let gameWidth = 102;
 let gameHeight = 60;
 let lightDistance = 10;
+let levelCounter = 1;
+let difficulty = 0.2; // 0.0 - 1.0 
 
+let enemyWordList = ['such roge','wow.','iz fud?','very gen','many levl','henlo','much deth perm'];
+let enemyColorList = ['#0ff','#0f0','#00f','#f0f'];
 
+// get initial level and start the game
 fetch('level.txt')
 .then(response => response.text())
 .then(text => {
     // console.log(text);
     Game.init(text);
 });
-// outputs the content of the text file
 
+// function for requesting new levels
+let fetchNewLevel = function(){
+    console.log("Fetching (haha) Level...");
+    fetch('new-level')
+        .then(response => response.text())
+        .then(text => {
+            Game.nextLevelFromTxt(text);
+        });
+}
 
+// This draws the level and handles everything (should change to drawLevel())
 let calculateLighting = function(px, py) {
     
     // loop through all the tiles
@@ -22,7 +36,9 @@ let calculateLighting = function(px, py) {
 
             let clearKey = j + "," + i;
             let dist = Math.hypot(j-px, i-py);
-            if(clearKey === Game.goal) drawColor = '#f00';
+            if(clearKey === Game.goal) {
+                drawColor = '#f00';
+            }
 
             // draw walls within light
             if(dist < lightDistance && clearKey in Game.map) {
@@ -38,47 +54,101 @@ let calculateLighting = function(px, py) {
             } else {
                 Game.display.draw(j, i, " ");
             }
+
+            // console.log("done drawing");
             
         }
     }
-
 }
 
 
-var Game = {
+const Game = {
     display: null,
     map: {},
+    free: {},
+    scheduler: null,
     engine: null,
     player: null,
     goal: null,
     hidden: [],
+    numEnemies: levelCounter,
+    enemies: [],
     
     init: function(text) {
         this.display = new ROT.Display({width:gameWidth,height:gameHeight});
         document.body.appendChild(this.display.getContainer());
 
-        this._generateMapFromTxt(text);
+        let freeCells = this._generateMapFromTxt(text);
 
-        var scheduler = new ROT.Scheduler.Simple();
-        scheduler.add(this.player, true);
+        // place goal
+        this._generateGoal(freeCells);
 
-        this.engine = new ROT.Engine(scheduler);
+        // set character
+        this.player = this._createThing(Player, freeCells);
+        // set enemies
+        for (let i = 0; i < this.numEnemies; i++){
+            this.enemies.push( this._createThing(Enemy, freeCells));
+        }
+
+        this.scheduler = new ROT.Scheduler.Simple();
+        // add player to schedule
+        this.scheduler.add(this.player, true);
+        // add enemies to schedule
+        for (let enemy of this.enemies) {
+            this.scheduler.add(enemy, true);
+        }
+
+        this.engine = new ROT.Engine(this.scheduler);
         this.engine.start();
+    },
 
-        // fetch('level.txt').then(response => { response.text()})
-        //     .then(data => {
-        //         console.log(data);
+    nextLevelFromTxt: function(txt) {
+        // clear enemies from scheduler
+        for (let i = 0; i < this.numEnemies; i++){
+            this.scheduler.remove(this.enemies[i]);
+        }
+        // clear enemies list
+        this.enemies = [];
 
-                
-        //     });
+        // clear other vars
+        this.hidden = [];
+        this.map = {};
+        this.free = {};
+        this.goal = null;
+        
+        // increment level counter and enemies
+        this.numEnemies = ++levelCounter;
+        // increase difficulty
+        difficulty += 0.1;
+
+        //generate new map
+        let freeCells = this._generateMapFromTxt(txt);
+        // place goal
+        this._generateGoal(freeCells);
+
+        // set up player
+        const {x,y} = this._placeThing(freeCells);
+        this.player.setPostion(x,y);
+        // fix tail
+        this.player.oldPos.x = x+1;
+        this.player.oldPos.y = y;
+
+        // draw player (sorry I'm not obeying private/publicccc)
+        this.player._draw();
+
+
+        // setup new enemiesz
+        for (let i = 0; i < this.numEnemies; i++){
+            // add enemy
+            this.enemies.push(this._createThing(Enemy, freeCells));
+            this.scheduler.add(this.enemies[i], true);
+
+            const {x,y} = this._placeThing(freeCells);
+            this.enemies[i]._draw();
+        }
     },
 
     _generateMapFromTxt: function(txt) {
-        // grab txt file (width is 100, height might be variable?)
-        console.log(txt);
-        // remove all newline chrs
-        // data = data.replace('\n','');
-
         var freeCells = [];
 
         // iterate through chars and put into obj thing
@@ -93,6 +163,7 @@ var Game = {
             if(/\s/.test(chr)) {
                 // leave as empty space
                 freeCells.push(key);
+                this.free[key] = ".";
             } else {
                 // assign char to map object {x,y,value}
                 this.map[key] = chr;
@@ -100,67 +171,49 @@ var Game = {
                 // console.log(key + " : " + chr);
             }
         }
-        // drap map
-        this._generateGoal(freeCells);
-        // this._drawWholeMap();
 
-        // create character
-        this._createPlayer(freeCells);
+        return freeCells;
     },
 
-    _createPlayer: function(freeCells) {
+    _placeThing: function(freeCells) {
         let index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
         let key = freeCells.splice(index, 1)[0];
         let parts = key.split(",");
         let x = parseInt(parts[0]);
         let y = parseInt(parts[1]);
 
+        return {x, y};
+    },
 
-        calculateLighting(x, y);
-        this.player = new Player(x, y);
+    _createThing: function(what, freeCells) {
+        const {x,y} = this._placeThing(freeCells);
+        return new what(x, y);
     },
     
     _generateGoal: function(freeCells) {
-        // for (var i=0;i<10;i++) {
-        //     var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-        //     var key = freeCells.splice(index, 1)[0];
-        //     this.map[key] = "*";
-        // }
-
         var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
         var key = freeCells.splice(index, 1)[0];
         this.map[key] = goalChar;
         this.goal = key;
         this.hidden.push(key);
-    },
-    
-    _drawWholeMap: function() {
-
-        // for (var key in this.map) {
-            // console.log(key + ' : ' + this.map[key]);
-            // let parts = key.split(",");
-            // let x = parseInt(parts[0]);
-            // let y = parseInt(parts[1]);
-
-            // fancy colors maybe
-            // let amt = (x + y)/200;
-            // let color = ROT.Color.interpolate([0, 0, 255], [0, 255, 255], amt);
-            // this.display.draw(x, y, this.map[key], ROT.Color.toHex(color));
-
-            // make goal a different color
-            // if(key === this.goal){
-            //     this.display.draw(x, y, this.map[key], "#f00");
-            // } else {
-            //     this.display.draw(x, y, this.map[key]);
-            // }
-        // }
     }
 };
 
-var Player = function(x, y) {
+let Player = function(x, y) {
     this._x = x;
     this._y = y;
+    this.oldPos = {x,y};
     this._draw();
+}
+
+Player.prototype.getSpeed = function() { return 100; };
+Player.prototype.getPos = function() { return {x:this._x, y:this._y}; };
+
+Player.prototype.setPostion = function(x, y) {
+    this.oldPos.x = this._x;
+    this.oldPos.y = this._y;
+    this._x = x;
+    this._y = y;
 }
     
 Player.prototype.act = function() {
@@ -193,25 +246,103 @@ Player.prototype.handleEvent = function(e) {
     if (newKey == Game.goal) { 
         console.log("nice one"); 
         // load new level here!
-
-        // request new image? maybe this can all be done in the BG while the user is palying the level
-        // or I can just preload a bunch of doge
+        fetchNewLevel();
     } 
     else if ((newKey in Game.map)) { return; }
 
-    calculateLighting(newX, newY);
+    // calculateLighting(newX, newY);
 
     // Game.display.draw(this._x, this._y, Game.map[this._x+","+this._y]);
-    Game.display.draw(this._x, this._y, "~");
-    this._x = newX;
-    this._y = newY;
+    this.setPostion(newX, newY);
     this._draw();
     window.removeEventListener("keydown", this);
     Game.engine.unlock();
 }
 
 Player.prototype._draw = function() {
+    calculateLighting(this._x, this._y);
+    Game.display.draw(this.oldPos.x, this.oldPos.y, "~");
     Game.display.draw(this._x, this._y, "@", "#ff0");
+}   
+
+
+class Enemy {
+
+    constructor(x,y){
+        this.word = enemyWordList[Math.floor(Math.random() * enemyWordList.length)];
+        this.color = enemyColorList[Math.floor(Math.random() * enemyColorList.length)];
+        this._x = x;
+        this._y = y;
+
+        this.prevPos = [];
+        for (let i=0; i < this.word.length; i++) {
+            this.prevPos.push({
+                x: this._x + i,
+                y: this._y
+            });
+        }
+
+        this._draw();
+    }
+
+    _draw(){
+        for (let i=0; i < this.prevPos.length; i++) {
+            Game.display.draw(this.prevPos[i].x, this.prevPos[i].y, this.word[i], this.color);
+        }
+    }
+
+    setPosition(x, y){
+        this._x = x;
+        this._y = y;
+
+        // add new pos to start
+        this.prevPos.unshift({x,y});
+        // remove old from end
+        this.prevPos.pop();
+    }
+
+    getSpeed() { return 100; }
+
+    act(){
+        // sometimes pick random other location
+        let {x,y} = Game.player.getPos();
+        if(Math.random() > difficulty){
+            let keys = Object.keys(Game.free);
+            let key = keys[ keys.length * Math.random() << 0];
+            let parts = key.split(",");
+            x= parseInt(parts[0]);
+            y= parseInt(parts[1]);
+        }
+        
+
+        var passableCallback = function(x, y) {
+            return (x+","+y in Game.free);
+        }
+        var astar = new ROT.Path.AStar(x, y, passableCallback, {topology:4});
+
+        var path = [];
+        var pathCallback = function(x, y) {
+            path.push([x, y]);
+        }
+        astar.compute(this._x, this._y, pathCallback);
+
+        path.shift();
+        try {
+            if (path.length == 1) {
+                // Game.engine.lock();
+                // alert("Game over - you were captured by Enemy!");
+            } else {
+                x = path[0][0];
+                y = path[0][1];
+    
+                // Game.display.draw(this._x, this._y, Game.map[this._x+","+this._y]);
+                this.setPosition(x,y);
+            }
+        } catch(error) {
+            // just don't worry about it
+        }
+
+        this._draw();
+        
+    }
 }
-
-
