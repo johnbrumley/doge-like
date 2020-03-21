@@ -1,9 +1,9 @@
 let goalChar = "%";
-let goalChars = ['🧀','🥨','🥯','🌭','🍔','🍟','🍕','🥪','🌯','🌮','🥙','🥓','🧇','🥞','🍳','🥩','🍗','🍖','🍌','🍉','🍋','🍇','🍓','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒️','🍧','🍡','🍢','🥠','🍙','🍤','🥟','🍣','🍛','🍲','🍜','🍝','🥧','🧁','🍨','🍭','🍬'];
+let goalChars = ['🧀','🥨','🥯','🌭','🍔','🍟','🍕','🥪','🌯','🌮','🥙','🥓','🧇','🥞','🥩','🍗','🍖','🍌','🍉','🍋','🍇','🍓','🍈','🍒','🍑','🥭','🍍','🥝','🍅','🍆','🥑','🥦','🥬','🥒️','🍧','🥠','🍤','🍝','🥧','🧁'];
 let collectedGoals = "";
 const gameWidth = 102;
-const gameHeight = 60;
-const maxLength = 102 * 60;
+const gameHeight = 50;
+const maxLength = gameWidth * gameHeight;
 
 let lightDistance = 10;
 let levelCounter = 0;
@@ -40,51 +40,83 @@ let fetchNewLevel = function(){
         });
 }
 
+let calculateDistance = function(x,y){
+    return Math.hypot(x,y);
+    // return (x*x + y*y);
+}
+
+let clamp = function (num, min, max) {
+    return num <= min ? min : num >= max ? max : num;
+}
+let checkColor = function(key) {
+    let drawColor = '#fff';
+
+    if(key === Game.goal) {
+        drawColor = '#f00';
+    } else if(Game.map[key] === '?') {
+        drawColor = '#0f0';
+    } else if(key === Game.letter) {
+        drawColor = '#ff0';
+    }
+
+    return drawColor;
+}
+
+let getCoords = function(key){
+    let parts = key.split(",");
+    let x = parseInt(parts[0]);
+    let y = parseInt(parts[1]);
+
+    return {x,y};
+}
+
 // This draws the level and handles everything (should change to drawLevel())
 let calculateLighting = function(px, py) {
-    
-    // loop through all the tiles
-    for (let i = 0; i < gameHeight; i++) {
-        for (let j = 0; j < gameWidth; j++) {
-            let drawColor = '#fff';
 
-            let clearKey = j + "," + i;
+    // clear bg
+    // for (let key in Game.free) {
+    //     let {x, y} = getCoords(key);
+    //     Game.display.draw(x, y, ' ');
+    // }
 
-            // dont do extra calcs if lightson 
-            let dist = lightsOn ? 1000 : Math.hypot(j-px, i-py);
+    Game.display.clear();
 
-            // if(lightsOn) Game.display.draw(j, i, ".");
-            
-            if(clearKey === Game.goal) {
-                drawColor = '#f00';
-            } else if(Game.map[clearKey] === '?') {
-                drawColor = '#0f0';
-            } else if(clearKey === Game.letter) {
-                drawColor = '#ff0';
+    if(!lightsOn) {
+        // pick box around player and calc lighting for the box
+        xRange = [clamp(px - lightDistance, 0, gameWidth), clamp(px + lightDistance, 0, gameWidth)];
+        yRange = [clamp(py - lightDistance, 0, gameHeight), clamp(py + lightDistance, 0, gameHeight)];
+
+        for(let i = xRange[0]; i < xRange[1]; i++){
+            for(let j = yRange[0]; j < yRange[1]; j++){
+                let key = i + "," + j;
+                let dist = calculateDistance((i-px),(j-py));
+
+                // draw walls within light
+                if(dist < lightDistance && key in Game.map) {
+                    // add to show if not already there
+                    if(!Game.show.includes(key)) Game.show[key] = '.';
+                // draw ground within light
+                } else if (dist < lightDistance) {
+                    Game.display.draw(i, j, ".");
+                }
             }
+        }
 
-            // draw walls within light
-            if(dist < lightDistance && clearKey in Game.map) {
-                Game.display.draw(j, i, Game.map[clearKey], drawColor);
-                // remove from hidden
-                if(Game.hidden.includes(clearKey)) Game.hidden.splice(Game.hidden.indexOf(clearKey),1);
-            // draw ground within light
-            } else if (dist < lightDistance) {
-                Game.display.draw(j, i, ".");
-            // hide everything else except discovered stuff
-            } else if(!Game.hidden.includes(clearKey) || lightsOn) {
-                Game.display.draw(j, i, Game.map[clearKey], drawColor);
-            } else {
-                Game.display.draw(j, i, ' ');
-            }
+        // draw discovered objects (recolor special objs)
+        for (let key in Game.show) {
+            let {x, y} = getCoords(key);
+            Game.display.draw(x, y, Game.map[key], checkColor(key));
+        }
 
-            // console.log("done drawing");
-            
+    } else {
+        // draw everything?
+        for (let key in Game.map){
+            let {x, y} = getCoords(key);
+            Game.display.draw(x, y, Game.map[key], checkColor(key))
         }
     }
 
-
-    // try drawing some text
+    // draw text overlays
     drawBox(3,2,12,4);
     let txt = 'DOGELIKE';
     txtX = 4;
@@ -92,7 +124,7 @@ let calculateLighting = function(px, py) {
     for (let chr of txt) Game.display.draw(txtX++,  txtY + Math.round(Math.random()), chr, "#f00");
 
     // info stuff
-    drawBox(83,2,100,15);
+    drawBox(83,2,100,11);
     // show DOGE gold
     Game.display.drawText(84,3,"%c{yellow}" + '[  '
         + collectedLetters[0] + '  '
@@ -110,7 +142,7 @@ let calculateLighting = function(px, py) {
         Game.display.draw(chrX++,7, chr);
     
     // show current status
-    Game.display.drawText(85,13,"%c{#f0f}" + status);
+    Game.display.drawText(85,9,"%c{#f0f}" + status);
     
 }
 
@@ -136,12 +168,12 @@ let randomEffect = function(){
     if (roll == 0) 
     {
         status = "mor lite";
-        lightDistance += 5;
+        lightDistance = clamp(lightDistance + 5, 5, 1000);
     }
     if (roll == 1) 
     {
         status = "les lite";
-        lightDistance -= 5;
+        lightDistance = clamp(lightDistance - 5, 5, 1000);
     }
     if (roll == 2) 
     {
@@ -152,7 +184,9 @@ let randomEffect = function(){
     if (roll == 3) 
     {
         status = "hi fud!";
-        Game.hidden.splice(Game.hidden.indexOf(Game.goal),1);
+        // Game.hidden.splice(Game.hidden.indexOf(Game.goal),1);
+        Game.show[Game.goal] = '.';
+
     }
     // invert controls
     if (roll == 4) 
@@ -175,11 +209,15 @@ const Game = {
     goal: null,
     letter: null,
     hidden: [],
+    show: [],
     numEnemies: levelCounter,
     enemies: [],
     
     init: function(text) {
+        
+        ROT.Display.Rect.cache = true; // turn on caching (actually seems to slow things down)
         this.display = new ROT.Display({width:gameWidth,height:gameHeight});
+
         document.body.appendChild(this.display.getContainer());
 
         let freeCells = this._generateMapFromTxt(text);
@@ -217,6 +255,7 @@ const Game = {
         this.enemies = [];
 
         // clear other vars
+        this.show = [];
         this.hidden = [];
         this.map = {};
         this.free = {};
@@ -286,8 +325,9 @@ const Game = {
     }, 
 
     _generateMapFromTxt: function(txt) {
-        // chop txt to max length
+        // chop txt to max length (or add)
         if(txt.length > maxLength) txt = txt.substring(0,maxLength);
+        if(txt.length < maxLength) txt = txt + ' '.repeat(maxLength - txt.Length);
 
         var freeCells = [];
 
@@ -524,7 +564,6 @@ class Enemy {
             x= parseInt(parts[0]);
             y= parseInt(parts[1]);
         }
-        
 
         var passableCallback = function(x, y) {
             return (x+","+y in Game.free);

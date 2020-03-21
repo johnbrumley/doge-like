@@ -9,7 +9,7 @@ app.get('/',function(req,res) {
     res.sendFile(path.join(`${__dirname}/index.html`))
 });
 
-app.get('/new-level', function (req, res) {
+app.get('/get-level', function (req, res) {
     console.log("generate new level");
     // grab new level and send back
 
