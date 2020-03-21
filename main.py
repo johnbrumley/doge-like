@@ -18,10 +18,18 @@ imgs = ced.detect()
 
 # visualize(imgs)
 
+j = 1
+for i in imgs: 
+    f = open('level' + str(j) + '.txt','w')
+    f.write( do(Image.fromarray(i)) )
+    f.close()
+    j = j + 1
+
+
 # convert from array to image
-img_obj = Image.fromarray(imgs[3])
-imgtxt = do(img_obj)
-print(imgtxt)
+# img_obj = Image.fromarray(imgs[3])
+# imgtxt = do(img_obj)
+# print(imgtxt)
 
 # convert tabs to spaces
 

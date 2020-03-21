@@ -1,0 +1,100 @@
+     ##   ##                           %#     #  S S S               #          #                   
+       # #                             #S  #S #  #   %S                ##       %#   S#             
+        ##                       S#   # #   S     ## %S  S# #%S#     S               ##   #         
+   S#   S%          ###      #   SS  #S  #S       ## S%%       %                                    
+       #%  %     #       #S##SS   SS%   ##S##   S#     #  #    # #                                  
+#S S#                  ##S#   %##      #   SS  SS #       #       SS#        #        S     #S      
+   #    ##      #      SS#%#   ##  #   S  SS   S  S#  S   #       ##  ##S          #SS#             
+         %            #S S#S#  #S #S# S# ##   S#   S##     #    #                                   
+           #S         S #SSSS  #SS# # S          S   #    # S   #  # #%##        # #     #   S    S#
+ #       #           S# SS# %# #%S%   %%#SSS##S##SSS#%S##SS## ##S# ##SS## ## ####S#SS### #   S      
+ #       S          SS#S##S SS  %#S ##  S%SS#S%##SSS #SSSSSSSS%SS%SS#S##SSS#S%S#%SSS#%%% ##S        
+             S     #%#S## # %S# #S#     #%SS#SS #S#S #SS#SSSSSSSS#SS S  SS%#S%#S#SS##S%##%          
+ #           #     S# ##   #S## #       SS#SS#SSSS S  S##SSSSSSS# SS#S #SSS##SSS SSSS#SSSS    ##    
+               # ###  #%   #  # ##S                  # #   ##S%#      ##            S # #S          
+ #   S        %SS%%# %SS#%SS%S#%%##                  S ## #%  #   %    #     ##       # S#      # S#
+ #   ##       SSS#S  % SS#SSSSS%S##             #         S#     S#        #SS#        ##       S  #
+  #  #S      #S%SSS  %SSS%S#%SS%SS#S            #      %# #         S#             #   ##           
+  #      S       #   ##  %S S% #   ##              ##  % #    SS      # #     #    #    #S          
+                 #   #  # #%SSS     S#  #  #    #  # # ##%      #   # #  #%   #     SS  ##          
+      #    S###  #      ## #S#S # #  S     S       #            #   ####%##S#        S #            
+     #%#  #     #%##    S#    ##  #  ###           #    #          #S# ##S# %#              #      #
+     S    #     ##  ## #S##   #S##    S##            S            SSS%S%##S S               #       
+     #S         S #SS#######  ###   ##   ##S#      ##            S####SS #SS%         ### #         
+      #         %S#S%## SS#   #S   SS#  #   ##                   ## ###  S %S  # S      S       #   
+    # #S       #S##SS##SS#%#   %#SS  %%##%#              S        %  #   # S#  #                    
+    ###    #%#S%S# SS###S S# ##SSS#  #S  SS  ####          #     #S        S                        
+    #S%S%%SS%SSS# S%S#SS%%S%%S%S#S#%S#S%S%%#%%  #S#          #S# #S #S     #               %# #     
+    ###S%%#S% #SS##%SS#%S#S%%S## SS#S#S%#%S#SS             #S##   #        #S        #  S  S#       
+    #S%#SS%SS#S# #S%SS SS%S%SS## SSSSS#SS%S%SS       ##     S#S#  #        #         #              
+              #S##SS#%    S%   ###  S#  #   #   ###        # S#S ##     #  #                    #S  
+        #S     SSSSS    ##%S  #   # S#  # ##SS#S  %#     ##% ##S ## # # S  #                        
+               ##  S#  #S%##  # ##%%#       %SS## %%##     SS S% S# S ##S ##                 ##     
+          S    S#   %#SS ###      #S         # ##  %S#     #S  SS#S #SSS# ##     #      #          #
+               #   S  SS#     S#  SS     #SS#    #   ##     ## #%#  SSS#   SS     #    #S    %%    #
+        S#     S#  #%S##  S  ##      #  #SS###   #   S  ###%SSS #%  ###   S%      S   #####  %?     
+   S %##      #    %S##   #           #SS####%  S    #    S#S  S SS #S#  S%%     #       SS   # S   
+   # #      # #   SS##SSS # #%S# #  #SS#     S%#  #  #    #S   # #SS#   # S# SS           S#        
+              S  S% ##S #   SSS#####S%%####SS %%#S#  #    #S   #  #%S   #SS#             S #        
+    #%  #    #  #%%S  S#S   SSSS  SS%%S S# ## #SSSS#% #   #    S%  #SS  #%%        #SS########      
+       SS   ##  %% S#    # #S%#    %S S##SSS%  %% # ##          %#  # S #S%#      S%SSSSSSSS%       
+           #   SS#  #  ##S####S #  #SS###S#S#S %%S##          #S#   ###S#SSS#     S%%%SSS#%%%#  #S  
+          %  #  #S   SS%%S#S#  S#   SSSS# S##S####      ##       ## SS S%S#  # S   S#S %S S#S#      
+          #      S####S##  ##S S    ##S## # #SS  #    ###    ## ##S##%S   #            %  #         
+   S        # #  #S####   ##  #S#   # S##     S# S      #S#S ####  S# ##  S              #         S
+    #      #SS#   ##S #S#     ##S            #S #S##       ###SS## ##  S# # #    #         S        
+    S   #S      S#  ## SS#  #  #        S# SS#  ##  S#      ##%SSSSSS  #SSS S# ##          #        
+         S  #SS%S#   %SSSS#SS###  # ## S?S %#   #   ## %# ######  ##S#  #%S# S ##     #S   #  S     
+        ##S# S%SSS# #SS###SSS#%S   S%%%%SS%S    ##    #%SSS  # ##  SS#  #SS#          ## #S  S#     
+   #    #  S  SS#%# SS ##SS S#S#   S%S%SS#S    ###   ##S#SS#########S     SS    #            S  ##  
+        SS    ##SS% ##SSS%% # S    SSSSS   #   ##S###%##SS   #  S%  ##    S## S # ## %           # #
+        #    S     S#####       # #S%#S  #     # ##%?%##S## # SS##?# S    S #        # S#       #%  
+        #    S####      S#    #S #SSSS       #S    S%%%%%S#   SSS#%%      SS#          #           #
+        SS       S%##   #S##  S# %S#         %SS#  SS #%#%#   #S###SS     #S%           #   SS #   #
+        #S #S S#S#S%SS       SSSSSS####S#   S  S%S S%% # S%##  %##SSS      SS   ##  S   S # #S## #  
+ #  #  SS  #S #S%S #S      #SS S       SSSSSS ###  SSSS  S%%## SSS###      S#       #  S         #  
+    #  ##%#SS# #### SS#  S##              SS%S#%%%S%S### SS#   ## SS#      ###             ##       
+       #   # S#S%S%#SSS  S#S        ##  #  ##SSS%%??# #%###    S#SSS       SS#   #                  
+       #     SS ###S%SS#  S#   #S#S#####SS%# #SS# S%S  %%###S    %%##      SS#     S          ##    
+       #    %%S  #S#S# ####    ## S       S    S# #S#  %SS  S ## %%        SSS  S#             #S  #
+      #     S%SS  #### #       SS#S  ###        S#%%# S%S    %##SS#        S### #    SS#%#       ## 
+      #      SSS#    #S          S   #S         S%S##S%%% ## S## #  %#     # ##       #S%#   S      
+    #S  #    S##SS#%#  #S        ##  S   SS  S  S%S% S%%SS## SS  # #%%#   #%#           S           
+     #%#%  S  #SSSS#     S ###    SS##S  S SS    SS#SS##S%S#SS ##S ## %S  #SS       S               
+  S#  S     #   SS###       SS#    S#S%    SS#    ## SSS##SSS# #S  %S  #S#S #     #S#   #     # #   
+  ##  #   ####S#   #SS#       ##  S#S  #    #   #  # ##     ## SS# %%SS  %S   #      #S#S       #   
+    # S  %#####  # S ###      #S  # S  S     S     ###S # #  ##%S SS%##%#S#%  #     SS             S
+      #S#     #     ##  S##   ##    #        #  SS##%#  SS  %%  %%S%####%# ## #    #      #S   ##   
+  #   S# ##   #   #  S  #       S   #          # SS###%SS#S#S%# S% S# %SS    #            #    #    
+      S#  S# #%#                 SS#S            ##  #%##%%%%%# S#    #%%##  S      ? #S #S      #  
+      SS  #   #S#S#  S             S#S          # #S##%SS%SS%S##       SSSS# #    ### %#        #S  
+ #   %S  S      #S #                #S    #          ##S##SS###            #S#     ##  #%   S##   S 
+     ##         ##S                   S   #SS#       ##SS  S%#              SSS#  S#    #S  S S#    
+  S    #   ##   #%  #  ##   # #       # #% # ## #       ##S#             #  %  S     ##   SS        
+       S#     S #%S         #    #   #        ###  #  ####                S#          #   #         
+ #     #    #S%SS#%     %S  #    # ##S               S#                 # #%#S    #S #S #     #     
+S  #S## # ##SS%S%S%S# S%%S%SS##      ## #S         #S              ## # # %%#S#%  SS SS #S S  # #S  
+   #SS ##  ##%##SSSSS# SSSS##SSS##S#  # ##      SS%#            # #%SS ## SS#SS#SSS%SSS%#%  ##      
+ # S#  S#  #?%%SSS%#SS#SSSSSS#SS####  ##S%S%SS##                S  SSS # S#S#SS#S#S  %SS%S    # S   
+     #S##   S%S #SSS%%%S%SSSSSS%%S SSSSSSS%SS#                    SSSS%S ##S#S#%SSS  S SS     S     
+   ##  #S   S%%#SSSS #S%S#SSSS#S%SS%%SSS%S#SS                     #  ##S S##S  ##SS  # #S           
+   ## SSSSSS%S###S%S##S#S#SSS# ### SS##SS ##                         SSS##S%%  # #%    #SS   %  S   
+         # ##S #SSSSS#S%S#S#SS     ###S?#                       S%%# S %  ##S #S  SSS   ##   S#S#?  
+    %    # # #%#S##S##S?% ###SS# # S  #%%                     S##%S#SS#S     #     S         #  S#  
+    S    S#  S%S S# #SS%#S#S#S#    #%#SSS                    %%SSS# ##     # #  #            SS     
+ S        # S SS#S%SSS###S####    # %%%###                    ##%S  %#     S## S%% #             # #
+          ###  #SSSSSSSS #SSS#####  S%S                   S# S#S%SS##       S###SS# S # #%  #       
+         S ### SS%%S%%S#SSS#S%S    S#S%#   #S   ##         #SSSSS%#SS  ##  S  #SS S S    ##  SS   S 
+         ###   #SS%%%%%##S%SSSSS##SSSS## #S#SS  #SS #S####SSSSS#SSSSS#S##S S#SSS#SSS          S    #
+S#   S    %##S  # #  #SSSS%SSSSSSS#SSSSSS%SSSS# #SSSSSS##SSS#SS#%% S#SSS%%SS%S%%SS%# ##    SS # SS# 
+#S        S##    S S##S%%SSSSS%%SS##%SSSSS#S### #SSSS #SSSSSS##S#% S S# S%SS%S%%SSSS           S%S  
+%S    #   ####  ###%# S#S%SSS##SS  S##SS##S## #  #S #  #SSS## #SS# # SS SS#S S#SSSS#          S%# # 
+%S## ##   #SS#  ##  ###SS%S#S##SS#                   SS#      S       S#SSS#   S###         S %# #S 
+%SS%##S    S# S# ### ##S%S#SSSS  S##S #              #      S   ##   ##S SSS#  SS #         ###     
+# SS#S%    ###S# S#  S  SS#S##S##S# # S  #             #   %S   %S   %SSSS#SS  #%##       S#   S#   
+  S   %%   #S##   #  %  SSS#SS#S   #S# #%            # S   S     #   #S# S S## #%#%#      S   #%S  S
+##   ##    #SSS SS# ####S%##%S   SSS## ##            SSS              S   # S#  #SS       S   %#%##S
+    #        ###S ##  ##S#SS#SS #### #  S#  %#      #  # S#SSS        %#SS#  #  SS#       ##  S#%   
+    S#   ### # %#  ###     #%%?%S%##S#      ##      ##S  S  SS#    #  S#S#%    #S S#       #  S   S 
+     ##  #S#SSS  #  #% #  SSS#SS##   S  # #  #  ## #S SS   #SS% #S#    #  ##   ###%S       ###    % 
+          # ##S      ##   ### #S    ##   S#  #     S%# #   #  %#SS#   #S    #S#S  #   #####%S##S#SS#

@@ -15,8 +15,9 @@ app.get('/new-level', function (req, res) {
 
     // might include generating a level
 
-    // for now just keep sending the same level
-    const file = `${__dirname}/level.txt`;
+    // for now just send one of the generated levels
+    let rnd = Math.floor(Math.random() * 21) + 1;
+    const file = `${__dirname}/levels/level${rnd}.txt`;
     res.download(file); // Set disposition and send it.
 });
 

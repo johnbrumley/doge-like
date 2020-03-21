@@ -1,0 +1,133 @@
+     S     S#                     #SS       #%%##SS%#SS#   SS# %# #       S #                       
+     #S     SS                       #SS# ## #%S#S%###S    S ##S  #      S# #                       
+      SS     S%                         %### # ####SS      #   # S     #?S #                        
+       SS      %S                      %#   SS             #   # #     %%  #                        
+       #%S      #%#                  S%    SS              #   # #    %%   S                        
+        #S%       SS#               %#    #S              ##   ##    %%#   S                        
+           %#       #S##          S%      S               #    ##  #%%#    S                        
+            S%         SSS##   ##%%#     ##               #    S# #%%#     S                        
+              SS#       SSSSSSSSS#                        S    # S%%       S                        
+                #S#         ##                            S    #%%S        S                        
+                   #SS                                    S    %%#         S#                       
+                      #S###                               #   #%#         S ##SS#                   
+                          #####?                          #   % #S       %      ##SS#               
+                                                        #S#  #S         S#           ##S#           
+            #     ###                                   #S   S%        SS                #S##       
+        ##  %####SS  %##   ##       #S#  #S             #S  S# %     #%#                    #SS#    
+       %%%? %#S%%S  #S%%% %%%?         %  #%            #S  #S##S   SS                         ##S# 
+       %# %#%# S?   %S#S%S%# %#            #%#          S%S   #SS#SS                              SS
+       S%%% S%#%%%  #?# %#S?%?               S%#        #%#    #SS                                  
+       %S      S#S#%    #S  #                  %#       S       S                           S#S#    
+       S      S ##S      #S  ########           %#    #S%S      #                          S   %    
+              S SS#       S ##  ### #SSS###      SS  %%SS%      #                          #   ##   
+             ## #S       #S#              ##SS#   %S%%#S##     ##                               #   
+             # #S#       SSS                  ##SSS#%S#S#      #                                S   
+              #S%#%S     SS#S#                     SS %S SS#   #                               S    
+              #%#S# #S   ##SS#S                      #S# S S   S                                    
+               *#%#  %   S S#SS                      #% #S     #                                    
+               S%S#  #SS# S S%S                       %#% %   ##                                    
+             ##S #   S#   ##S                          S  #   S                                     
+             S#S S   %  #SSS                           #S    #S                                     
+             S #     SS  ##        #                    S#   S                                      
+            ##    S  #S#S          SSSS      ## S        %   S                                      
+            # #S  S   #%#        #S#          SSS         SS S#    #%       #                       
+            #S#%SS  #S#         SS     #     # SS           S#%%   ##      S?S      #  ####         
+             %##%% SS           #   ##SS     S  % #          %%SSS%%%%%%%  #SSS%%%SS#%S#S%#% SS##   
+             #% S%%#        #    ##%#   %    S  # %#   #      S%#%##%%%S%S  #SS%SS%S #S ## S     #S#
+              S##%        S##    S? S# #SS   #  S %S  %SS     #% % #S%#S#S  S#SS%#%S #% ## S        
+               S%#        ##     %%#%%###SS     S##  #%%%     #%S% #%%S%#S  %SSS%#%S SS  S S        
+               S#                %SS%   %SS#     S#  #%%%#     S#S  SS##SS  SS##SS%#%##  S%#        
+             SSS             SS  ##%?##S%%#S#    SS  S S%S                        S                 
+             S               #   S#%?%SS#SSSS    #S  S##%S      #                 %#                
+        #S   S                    S SSS##SS        S  SS%%      %                  %#               
+        ##  ##                        ##           %# S%%#      #                   SS              
+                                                    %#          S                    #%#            
+                                                     S          #                      ##S#         
+       %                                                        #                         SSS#      
+                                                                S                            #SS    
+                                                      S####SS   S                              #S#  
+                                                    #%      #%# S                                #S#
+     %S#                                            S  S      % #                                   
+     S                                             #S S#      #  #                                  
+     #                                         ##  SS%S  S    S  S                                  
+     S                                         S%%  ##SSS#  #S#  ##                                 
+     S                                           S?#S        ##   S                                 
+                                                S##SS#SS     %    SS#                               
+                                                S?%%%% SS   %#      ##SS#                           
+#SS%S                                          S#SS%%S#SSS%S##           #SS                        
+   #S                                   %S#     #%?%%#SS%#  #              #SS                      
+    S                                   SS%S%S    #%SSSS####S#S              S%                     
+    ##                                     ##SSSSSS##%  ###%S%#                %#                   
+     S                                       #SS SS##S #  #S#%S#                %S                  
+     S#                                       #%?%%SS#S##%S S# S#                #%#                
+     S%                                         # S##  #%   S %SSS  #              SS               
+   SS SS                                          #SS  S   S  SSS   #             #  SS             
+   #SS %#                                           %#S#  #S # S##   S           #S   #S#           
+   #SS# %S# #                                            #%  #SS#S####SSS#        SSS## #SS#        
+      SS##S#%                                            %   #SS%    ##SS%##          ##   #S#      
+        SS#S                                            SS  S%  %#  S      %           ##%%# #%     
+         #S              SS                            S#  ## % #%   S      S      S##S##S##   %    
+                          #%                          #S#  % #%S#%S#S%      #S #SSS  S###SS     S   
+                            %#                         %S S S SS#SSS?%S      S%#     ##S#%%S    S   
+                             %###                S     #%## #    #%S SSS#  ##S#      SS#  #S    S   
+                              %%%##          # SS%%%    SS  S     %S#SSSS S     S#   %   S%S    S   
+                              #S  #SSS%#     %#SS###    SS###  #SS#   ###SS   #??#      SSS # #%    
+                     SSS       S#  #SS###                 ###S#%        %%%#  %%%S   %#S#    SS     
+              S      S#S        S##                             #S#    %S%%% S%S%#  S%%%###SS       
+             S%%S ##S#SS        S                                  #S####SS% #?%?% #??#S            
+        ##SS#   #%S#%S#S#       S                                      ##S%S##SSS  %%# #            
+   ##SS#         %SSS#  #     # S                                          S# #   ##   #            
+  ##               S%# SS##SS SS#                 S%%# SSS    S%%  SSS #SS# #S%S#SSS   S            
+                    ##S ##S#%%#SS                 %SS##?#%S   %S%##?S%#%%S? S%##%%%%  S#            
+                     %%   S  S%SS                 %%S##% #S   %%S SS  #%  % S#  S%S#SS#             
+                     #%%##%#SS#                   #S%S#?#%S   SS%%#S###?#%SSS#  %%#S                
+                     #?%S##%#%                    S%S# S%S    S%S#SS#%#SSSSSS#  #%%S                
+                      #S#SS##S                                     %SSS####       S                 
+                          S#S#                                      #SS%S#S       S                 
+                                                                      #S%SS#      #                 
+                                                                         SSSS     #                 
+                                                                          #%%#    S                 
+        %#       S %  #S     %                        SS                   #%%   #S                 
+   ####?%%%S#SS S%SS%S#SS?S  %%S %% S%S#%% %%SS%S#%%#%%S                    #S  #%                  
+   SS%#%%S%%%?# S%S%S%S%?%#  %S%%%%S%S%%S%%??%%S%%??%%SS        %#           S #%                   
+   SSSS%%#SS%%  #% % S%SS%S  % %%#SS%#%%#%%%##% %%%#SS#S       #%#%#         SSS                    
+    ??%S%#S#S#   %%% %SS%?S  % %%%%%%%%S%%#?%%% ?%?%S%%S        #% SS       #                       
+    #       %            #         #%# %S   #     #               %##%      S                       
+            S                  #    S  S#                          %#S?#   S#                       
+                    #SSSS#######SS#                                 S%#   SS                        
+                                  SS                     S%S         S# #%#                         
+                                    S#                    S%%S        SS#                           
+                                     #SS                    S%%#       #                            
+                                       #SS##                 #%%S     S#                            
+                                           ##S#                #%%   #%                             
+                                         #S#S #S#                %S#SS                              
+                                        #S###%   SS#SS           #S                                 
+                                        S#%#SSS S%   #SS         #                                  
+                                        ## ###SS?#    #%         S %                                
+                                        S#%SS  %S    %S        #%  %S                               
+                                        #S #  %%#  SS         ##  S#%                               
+                                         #%%S?%  S%#              S##S                      #       
+    #                                      %%S #%#                #S SS    S   SS          #S       
+    S                                      #S###      S% %%%#%%S S?SSSS%S%S%S#%%%S  %S#%#S%#SS%     
+    %                                                 ?%%*??%?%  %%##S#%%%?%S%S%%% #%%%%%%%%%%%#    
+   #S                                                 %#*?#S?%S  S%S# S SS%%#% SS% S#%?S?%S%%%SS    
+   S                                                  ?S??SS%SS  S??S%?  %%%%%S%S% S?%?%%?%?%%SS    
+   S                                                  S##SS # #  #S#SS#  #?###S# #  SS#S%#S#####    
+  S#       %                                                        SS    S#           %S           
+ #S  ##   #%  ###                          ##SSSS#                  SS     %           S            
+    %%%%% #S S%SSS                               %                  ##      %                       
+   #S# #S##S   S%S                         %%    ##                #S#      #S                      
+   #S  #S##SS# %%                      #%#        #                #%S       SS                     
+   #SSS%% #S% %SSSS                    #%         #                #%%#       %#                    
+   #SSS#   ## #SSS#                    #S  #S     #                S#S         %                    
+   #S#                                     #S%    #                 %#         #S                   
+    S                                       #S%   #                 S#          S#                  
+                                              #   S                 ###          %#                 
+                                     #SS%SS%%%%SS%#                 SSS           %                 
+                                     SSS%S%??%%%%S#                 SS             %                
+                                      #### S%#   ##                #S               %               
+                                              ##  S                #S %#       #### #S              
+                                     #   #  #%SS# S                 SS%      ##SS#SS#S              
+       #S                            S # S #?S#   S                 #%#  #SS##    #S%#S             
+                                     # #%S S#     S                 ##S#S#          #%S#            
+                                       #%         #                   S#             #SS            
