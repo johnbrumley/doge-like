@@ -49,7 +49,8 @@ const Game = {
         ROT.Display.Rect.cache = true; // turn on caching (actually seems to slow things down)
         this.display = new ROT.Display({width:gameWidth,height:gameHeight});
 
-        document.body.appendChild(this.display.getContainer());
+        const gameDiv = document.getElementById('game');
+        gameDiv.appendChild(this.display.getContainer());
 
         let freeCells = this._generateMapFromTxt(text);
 
